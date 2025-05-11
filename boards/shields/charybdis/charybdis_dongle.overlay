@@ -1,34 +1,32 @@
 #include "charybdis.dtsi"
 
 &default_transform {
-	col-offset = <6>;
+    col-offset = <6>;
 };
 
 &kscan0 {
-	compatible = "zmk,kscan-gpio-direct";
-        input-gpios
-            = <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            ;
-    };
+    compatible = "zmk,kscan-gpio-direct";
+    input-gpios = 
+        <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+        <&pro_micro 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+        <&pro_micro 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+        <&pro_micro 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+        <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+        <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+        <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+        <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+        <&pro_micro 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+        <&pro_micro 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 };
 
 / {
-	vtrackball: virtual_input_trackball {
-		compatible = "zmk,virtual-input";
-	};
+    vtrackball: virtual_input_trackball {
+        compatible = "zmk,virtual-input";
+    };
 
-	input_relay_config_trackball {
-		compatible = "zmk,split-peripheral-input-relay";
-		device = <&vtrackball>;
-		relay-channel = <102>;
-	};
+    input_relay_config_trackball {
+        compatible = "zmk,split-peripheral-input-relay";
+        device = <&vtrackball>;
+        relay-channel = <102>;
+    };
 };
