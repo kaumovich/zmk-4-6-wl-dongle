@@ -1,12 +1,12 @@
 #include "charybdis.dtsi"
 
-&default_transform {
-    col-offset = <6>;
-};
-
 / {
 chosen {
         zmk,kscan = &kscan0;
+	};
+
+	default_transform {
+    		col-offset = <6>;
 	};
 
 &kscan0 {
